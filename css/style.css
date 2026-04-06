@@ -739,55 +739,44 @@ section {
 }
 
 /* 
-   11. PORTFÓLIO SECTION
+   11. PORTFÓLIO SECTION - CARROSSEL INFINITO
     */
 .portfolio {
   background-color: var(--color-bg-secondary);
+  padding: var(--spacing-3xl) 0;
 }
 
-.portfolio__filters {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-3xl);
-  flex-wrap: wrap;
-}
-
-.filter-button {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border: 2px solid var(--color-secondary);
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: var(--font-weight-semibold);
-  transition: all var(--transition-normal);
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
-}
-
-.filter-button:hover,
-.filter-button--active {
-  background-color: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
-}
-
-/* 🔴 GRID CORRIGIDO - CARDS MENORES */
-.portfolio__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-lg);
-  max-width: 900px;
+/* CAROUSEL WRAPPER */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-xl);
 }
 
-/* 🔴 CARD COM TAMANHO FIXO QUADRADO */
-.portfolio__card {
+/* CAROUSEL CONTAINER */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* CAROUSEL TRACK (contém os cards) */
+.carousel__track {
+  display: flex;
+  gap: var(--spacing-lg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Cada card ocupa 1/3 da largura para mostrar 3 cards */
+}
+
+/* CAROUSEL CARD - TAMANHO FIXO */
+.carousel__card {
+  flex: 0 0 calc(33.333% - var(--spacing-lg) * 2/3);
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 9 / 12;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
@@ -796,17 +785,31 @@ section {
   justify-content: center;
   text-decoration: none;
   color: inherit;
-  width: 100%;
-  height: auto;
+  transform: scale(0.85);
+  opacity: 0.7;
 }
 
-.portfolio__card:hover {
-  transform: translateY(-8px);
+/* CARD CENTRAL - DESTAQUE */
+.carousel__card:nth-child(2) {
+  transform: scale(1.15);
+  opacity: 1;
+  z-index: 10;
   box-shadow: var(--shadow-lg);
 }
 
-/* IMAGEM COM TAMANHO FIXO */
-.portfolio__image {
+/* HOVER NOS CARDS */
+.carousel__card:hover {
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+
+.carousel__card:nth-child(2):hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* IMAGEM DO CARD */
+.carousel__image {
   position: absolute;
   top: 0;
   left: 0;
@@ -816,19 +819,19 @@ section {
   z-index: 1;
 }
 
-.portfolio__img {
+.carousel__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-normal);
 }
 
-.portfolio__card:hover .portfolio__img {
+.carousel__card:hover .carousel__img {
   transform: scale(1.05);
 }
 
-/* OVERLAY */
-.portfolio__overlay {
+/* OVERLAY DO CARD */
+.carousel__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -846,54 +849,154 @@ section {
   z-index: 2;
 }
 
-.portfolio__card:hover .portfolio__overlay {
+.carousel__card:hover .carousel__overlay {
   opacity: 1;
 }
 
-.portfolio__card-title {
+.carousel__title {
   font-size: var(--font-size-h3);
   color: white;
   margin-bottom: var(--spacing-md);
 }
 
-.portfolio__card-description {
+.carousel__description {
   font-size: var(--font-size-body);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-lg);
   line-height: 1.6;
 }
 
-.portfolio__platforms {
+.carousel__platforms {
   display: flex;
   justify-content: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
 }
 
-.portfolio__platforms .badge {
+.carousel__platforms .badge {
   background-color: white;
   color: var(--color-primary);
 }
 
-/* RESPONSIVIDADE PORTFÓLIO */
+/* BOTÕES DE NAVEGAÇÃO */
+.carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  z-index: 20;
+  box-shadow: var(--shadow-md);
+}
+
+.carousel__nav:hover {
+  background-color: #6D28D9;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel__nav--prev {
+  left: -30px;
+}
+
+.carousel__nav--next {
+  right: -30px;
+}
+
+/* RESPONSIVIDADE CARROSSEL */
 @media (max-width: 1024px) {
-  .portfolio__grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 800px;
+  .carousel__card {
+    flex: 0 0 calc(50% - var(--spacing-lg) / 2);
+  }
+
+  .carousel__card:nth-child(2) {
+    transform: scale(1.1);
+  }
+
+  .carousel__card:nth-child(2):hover {
+    transform: scale(1.15);
+  }
+
+  .carousel__nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  .portfolio__grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 100%;
+  .carousel-wrapper {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .carousel__track {
+    gap: var(--spacing-md);
+  }
+
+  .carousel__card {
+    flex: 0 0 100%;
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  .carousel__card:nth-child(2) {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .carousel__card:nth-child(2):hover {
+    transform: scale(1.05);
+  }
+
+  .carousel__nav {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .carousel__nav--prev {
+    left: 10px;
+  }
+
+  .carousel__nav--next {
+    right: 10px;
+  }
+
+  .carousel__title {
+    font-size: var(--font-size-h3);
+  }
+
+  .carousel__description {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .portfolio__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+  .carousel-wrapper {
+    padding: 0 var(--spacing-md);
+  }
+
+  .carousel__nav {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .carousel__title {
+    font-size: 18px;
+  }
+
+  .carousel__description {
+    font-size: 12px;
   }
 }
 
