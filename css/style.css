@@ -168,6 +168,7 @@ a:hover {
 section {
   padding: var(--spacing-3xl) 0;
   position: relative;
+  scroll-margin-top: 120px;
 }
 
 .section__title {
