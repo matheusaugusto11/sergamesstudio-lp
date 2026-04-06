@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SergamesStudio - Transforme Sua Ideia em um Jogo de Sucesso</title>
+  <meta name="description" content="Desenvolvimento de jogos com mitos e lendas brasileiras. Prototipagem rápida, equipe apaixonada, metodologia ágil comprovada.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS será linkado aqui -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- THEME SWITCHER + LANGUAGE SELECTOR -->
+<div class="controls-bar">
+  <div class="controls-container">
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+    
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <select id="languageSelect" class="language-select" aria-label="Select language">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- 
+     HEADER / NAVEGAÇÃO
+      -->
+<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <div class="header__logo">
+        <img src="MARCA-SG---2.png" alt="SergamesStudio Logo" class="header__logo-img">
+        <span class="header__logo-text">SergamesStudio</span>
+      </div>
+      
+      <nav class="header__nav">
+        <a href="#home" class="header__nav-link" data-i18n="nav_home">Home</a>
+        <a href="#sobre" class="header__nav-link" data-i18n="nav_about">Sobre</a>
+        <a href="#servicos" class="header__nav-link" data-i18n="nav_services">Serviços</a>
+        <a href="#portfolio" class="header__nav-link" data-i18n="nav_portfolio">Portfólio</a>
+        <a href="#contato" class="header__nav-link" data-i18n="nav_contact">Contato</a>
+      </nav>
+      
+      <button class="header__cta-button" data-i18n="cta_start">COMECE AGORA</button>
+    </div>
+  </div>
+</header>
+
+<!-- 
+     HERO SECTION
+      -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1 class="hero__title" data-i18n="hero_title">
+          Transforme Sua Ideia em um Jogo de Sucesso
+        </h1>
+        
+        <p class="hero__subtitle" data-i18n="hero_subtitle">
+          Desenvolvimento de Jogos com Mitos e Lendas Brasileiras + Equipe Apaixonada + Prototipagem Rápida
+        </p>
+        
+        <button class="button button--primary button--large" data-i18n="cta_start_project">
+          COMECE SEU PROJETO AGORA
+        </button>
+      </div>
+      
+      <!-- Slider de Projetos -->
+      <div class="hero__slider">
+        <div class="slider">
+          <div class="slider__inner" id="heroSlider">
+            
+            <!-- Slide 1: Sery -->
+            <div class="slider__slide">
+              <div class="slider__image">
+                <img src="placeholder-sery.jpg" alt="Sery: Into the World of Myths" class="slider__img">
+              </div>
+              <div class="slider__content">
+                <h3 class="slider__title">Sery: Into the World of Myths</h3>
+                <p class="slider__description" data-i18n="slider_sery_desc">
+                  Uma jornada épica que mergulha o jogador em universos misteriosos baseados em mitos e lendas.
+                </p>
+                <a href="#portfolio" class="button button--secondary" data-i18n="btn_see_project">VER PROJETO COMPLETO</a>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slider__slide">
+              <div class="slider__image">
+                <img src="placeholder-projeto2.jpg" alt="Projeto 2" class="slider__img">
+              </div>
+              <div class="slider__content">
+                <h3 class="slider__title">Projeto 2</h3>
+                <p class="slider__description">Descrição do segundo projeto em destaque.</p>
+                <a href="#portfolio" class="button button--secondary" data-i18n="btn_see_project">VER PROJETO COMPLETO</a>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slider__slide">
+              <div class="slider__image">
+                <img src="placeholder-projeto3.jpg" alt="Projeto 3" class="slider__img">
+              </div>
+              <div class="slider__content">
+                <h3 class="slider__title">Projeto 3</h3>
+                <p class="slider__description">Descrição do terceiro projeto em destaque.</p>
+                <a href="#portfolio" class="button button--secondary" data-i18n="btn_see_project">VER PROJETO COMPLETO</a>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Navegação do Slider -->
+          <button class="slider__nav slider__nav--prev" onclick="prevSlide()" aria-label="Slide anterior">←</button>
+          <button class="slider__nav slider__nav--next" onclick="nextSlide()" aria-label="Próximo slide">→</button>
+          
+          <!-- Indicadores -->
+          <div class="slider__indicators">
+            <span class="slider__dot slider__dot--active" onclick="goToSlide(0)"></span>
+            <span class="slider__dot" onclick="goToSlide(1)"></span>
+            <span class="slider__dot" onclick="goToSlide(2)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+     SOBRE SECTION
+      -->
+<section id="sobre" class="about">
+  <div class="container">
+    <h2 class="section__title" data-i18n="about_title">Quem Somos</h2>
+    
+    <div class="about__content">
+      <div class="about__text">
+        <p class="about__description" data-i18n="about_desc_1">
+          A SerGames é um estúdio de desenvolvimento de jogos eletrônicos com sede em Sergipe, dedicado à criação de experiências de aventura que combinam a nostalgia dos jogos clássicos com as inovações dos títulos modernos.
+        </p>
+        
+        <p class="about__description" data-i18n="about_desc_2">
+          Inspirando-se em mitos e lendas de diversas culturas, o estúdio constrói mundos imersivos que encantam jogadores de todas as gerações.
+        </p>
+        
+        <h3 class="about__subtitle" data-i18n="about_history_title">História</h3>
+        <p class="about__description" data-i18n="about_history">
+          Fundada durante a GameJamPlus 2022, onde conquistou reconhecimento como finalista nacional, a SerGames evoluiu com a chegada de novos integrantes apaixonados por jogos e criatividade.
+        </p>
+        
+        <!-- Stats -->
+        <div class="about__stats">
+          <div class="stat-card">
+            <div class="stat-card__icon">🏆</div>
+            <div class="stat-card__content">
+              <h4 class="stat-card__title" data-i18n="stat_finalist">Finalista GameJamPlus 2022</h4>
+              <p class="stat-card__text" data-i18n="stat_finalist_desc">Reconhecimento Nacional</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-card__icon">👥</div>
+            <div class="stat-card__content">
+              <h4 class="stat-card__title" data-i18n="stat_team">5+ Profissionais</h4>
+              <p class="stat-card__text" data-i18n="stat_team_desc">Equipe Apaixonada</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-card__icon">⚡</div>
+            <div class="stat-card__content">
+              <h4 class="stat-card__title" data-i18n="stat_experience">3+ Anos</h4>
+              <p class="stat-card__text" data-i18n="stat_exp_desc">Experiência Profissional</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-card__icon">🎮</div>
+            <div class="stat-card__content">
+              <h4 class="stat-card__title" data-i18n="stat_platforms">XR, Mobile, PC</h4>
+              <p class="stat-card__text" data-i18n="stat_platforms_desc">Expertise em Múltiplas Plataformas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about__image">
+        <img src="placeholder-sery-about.jpg" alt="Sery: Into the World of Myths" class="about__img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+     SERVIÇOS SECTION
+      -->
+<section id="servicos" class="services">
+  <div class="container">
+    <h2 class="section__title" data-i18n="services_title">O Que Oferecemos</h2>
+    
+    <p class="section__subtitle" data-i18n="services_subtitle">
+      Temos 3 serviços principais. Escolha o que faz sentido para você.
+    </p>
+    
+    <div class="services__grid">
+      
+      <!-- Serviço 1 -->
+      <div class="service-card">
+        <div class="service-card__icon">💎</div>
+        <h3 class="service-card__title" data-i18n="service1_title">Desenvolvimento de Jogos Completo</h3>
+        
+        <p class="service-card__description" data-i18n="service1_desc">
+          Transforme sua ideia em um jogo profissional pronto para o mercado.
+        </p>
+        
+        <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+        <ul class="service-card__list">
+          <li data-i18n="service1_item1">✓ Game Design Document (GDD) profissional</li>
+          <li data-i18n="service1_item2">✓ Prototipagem e validação de mecânicas</li>
+          <li data-i18n="service1_item3">✓ Desenvolvimento completo (programação, arte, som)</li>
+          <li data-i18n="service1_item4">✓ Testes e otimização</li>
+          <li data-i18n="service1_item5">✓ Suporte para lançamento na Steam</li>
+        </ul>
+        
+        <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+      </div>
+      
+      <!-- Serviço 2 -->
+      <div class="service-card">
+        <div class="service-card__icon">⚡</div>
+        <h3 class="service-card__title" data-i18n="service2_title">Prototipagem Rápida</h3>
+        
+        <p class="service-card__description" data-i18n="service2_desc">
+          Valide sua ideia antes de investir uma fortuna.
+        </p>
+        
+        <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+        <ul class="service-card__list">
+          <li data-i18n="service2_item1">✓ Análise da ideia</li>
+          <li data-i18n="service2_item2">✓ Criação de protótipo funcional</li>
+          <li data-i18n="service2_item3">✓ 2-3 rodadas de feedback e iteração</li>
+          <li data-i18n="service2_item4">✓ Documentação técnica</li>
+        </ul>
+        
+        <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+      </div>
+      
+      <!-- Serviço 3 -->
+      <div class="service-card">
+        <div class="service-card__icon">🎓</div>
+        <h3 class="service-card__title" data-i18n="service3_title">Consultoria em Game Design</h3>
+        
+        <p class="service-card__description" data-i18n="service3_desc">
+          Aprenda como criar jogos que encantam.
+        </p>
+        
+        <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+        <ul class="service-card__list">
+          <li data-i18n="service3_item1">✓ Análise de sua ideia</li>
+          <li data-i18n="service3_item2">✓ Sessões de consultoria (1-1 ou em grupo)</li>
+          <li data-i18n="service3_item3">✓ Feedback em GDD e protótipos</li>
+          <li data-i18n="service3_item4">✓ Orientação sobre lançamento e marketing</li>
+        </ul>
+        
+        <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- 
+     PORTFÓLIO SECTION
+      -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h2 class="section__title" data-i18n="portfolio_title">Projetos em Destaque</h2>
+    
+    <p class="section__subtitle" data-i18n="portfolio_subtitle">
+      Veja como transformamos ideias em realidade.
+    </p>
+    
+    <!-- Filtros -->
+    <div class="portfolio__filters">
+      <button class="filter-button filter-button--active" data-filter="all" data-i18n="filter_all">Todos</button>
+      <button class="filter-button" data-filter="xr" data-i18n="filter_xr">XR</button>
+      <button class="filter-button" data-filter="mobile" data-i18n="filter_mobile">Mobile 2D</button>
+      <button class="filter-button" data-filter="pc" data-i18n="filter_pc">PC</button>
+    </div>
+    
+    <!-- Grid de Projetos -->
+    <div class="portfolio__grid">
+      
+      <div class="portfolio__card" data-category="xr mobile">
+        <div class="portfolio__image">
+          <img src="placeholder-sery-thumb.jpg" alt="Sery: Into the World of Myths" class="portfolio__img">
+        </div>
+        <div class="portfolio__overlay">
+          <h3 class="portfolio__card-title">Sery: Into the World of Myths</h3>
+          <p class="portfolio__card-description" data-i18n="portfolio_sery_desc">
+            Uma jornada épica que mergulha o jogador em universos misteriosos baseados em mitos e lendas.
+          </p>
+          <div class="portfolio__platforms">
+            <span class="badge">XR</span>
+            <span class="badge">Mobile</span>
+            <span class="badge">PC</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio__card" data-category="mobile">
+        <div class="portfolio__image">
+          <img src="placeholder-projeto2-thumb.jpg" alt="Projeto 2" class="portfolio__img">
+        </div>
+        <div class="portfolio__overlay">
+          <h3 class="portfolio__card-title">Projeto 2</h3>
+          <p class="portfolio__card-description">Descrição breve do projeto 2.</p>
+          <div class="portfolio__platforms">
+            <span class="badge">Mobile</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio__card" data-category="pc">
+        <div class="portfolio__image">
+          <img src="placeholder-projeto3-thumb.jpg" alt="Projeto 3" class="portfolio__img">
+        </div>
+        <div class="portfolio__overlay">
+          <h3 class="portfolio__card-title">Projeto 3</h3>
+          <p class="portfolio__card-description">Descrição breve do projeto 3.</p>
+          <div class="portfolio__platforms">
+            <span class="badge">PC</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- 
+     CONTATO SECTION - FORMULÁRIO SIMPLIFICADO
+      -->
+<section id="contato" class="contact">
+  <div class="container">
+    <h2 class="section__title" data-i18n="contact_title">Fale Conosco</h2>
+    
+    <p class="section__subtitle" data-i18n="contact_subtitle">
+      Preencha o formulário abaixo e entraremos em contato em breve.
+    </p>
+    
+    <div class="contact__form-wrapper">
+      <form class="contact__form" id="contactForm">
+        
+        <!-- Nome -->
+        <div class="form__group">
+          <label for="name" class="form__label" data-i18n="form_name">Nome Completo</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form__input" 
+            placeholder="Seu nome" 
+            required
+            aria-label="Nome completo"
+          >
+        </div>
+        
+        <!-- Email -->
+        <div class="form__group">
+          <label for="email" class="form__label" data-i18n="form_email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form__input" 
+            placeholder="seu@email.com" 
+            required
+            aria-label="Email"
+          >
+        </div>
+        
+        <!-- Telefone -->
+        <div class="form__group">
+          <label for="phone" class="form__label" data-i18n="form_phone">Telefone (WhatsApp)</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            class="form__input" 
+            placeholder="(11) 99999-9999" 
+            required
+            aria-label="Telefone"
+          >
+        </div>
+        
+        <!-- Tipo de Serviço -->
+        <div class="form__group">
+          <label for="service" class="form__label" data-i18n="form_service">Qual serviço você está interessado?</label>
+          <select id="service" name="service" class="form__input" required aria-label="Serviço">
+            <option value="" data-i18n="form_select_service">Selecione um serviço</option>
+            <option value="development" data-i18n="service1_title">Desenvolvimento de Jogos Completo</option>
+            <option value="prototype" data-i18n="service2_title">Prototipagem Rápida</option>
+            <option value="consulting" data-i18n="service3_title">Consultoria em Game Design</option>
+          </select>
+        </div>
+        
+        <!-- Mensagem -->
+        <div class="form__group">
+          <label for="message" class="form__label" data-i18n="form_message">Mensagem</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            class="form__textarea" 
+            placeholder="Conte-nos sobre sua ideia de jogo..." 
+            rows="5"
+            aria-label="Mensagem"
+          ></textarea>
+        </div>
+        
+        <!-- Botão Submit -->
+        <button type="submit" class="button button--primary button--full" data-i18n="form_submit">
+          ENVIAR MENSAGEM
+        </button>
+        
+        <!-- Mensagem de Sucesso (oculta por padrão) -->
+        <div class="form__success" id="formSuccess" style="display: none;">
+          <p data-i18n="form_success">✅ Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 
+     FOOTER
+      -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      
+      <div class="footer__column">
+        <div class="footer__logo">
+          <img src="MARCA-SG---ICE.png" alt="SergamesStudio Logo" class="footer__logo-img">
+          <span class="footer__logo-text">SergamesStudio</span>
+        </div>
+        <p class="footer__description" data-i18n="footer_tagline">
+          Criando experiências que trazem felicidade através de jogos com cultura.
+        </p>
+      </div>
+      
+      <div class="footer__column">
+        <h4 class="footer__title" data-i18n="footer_links">Links Rápidos</h4>
+        <ul class="footer__links">
+          <li><a href="#home" class="footer__link" data-i18n="nav_home">Home</a></li>
+          <li><a href="#sobre" class="footer__link" data-i18n="nav_about">Sobre</a></li>
+          <li><a href="#servicos" class="footer__link" data-i18n="nav_services">Serviços</a></li>
+          <li><a href="#portfolio" class="footer__link" data-i18n="nav_portfolio">Portfólio</a></li>
+          <li><a href="#contato" class="footer__link" data-i18n="nav_contact">Contato</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h4 class="footer__title" data-i18n="footer_contact">Contato</h4>
+        <p class="footer__contact">
+          <strong data-i18n="footer_email">Email:</strong> contato@sergamesstudio.com<br>
+          <strong data-i18n="footer_whatsapp">WhatsApp:</strong> (79) 99999-9999<br>
+          <strong data-i18n="footer_address">Endereço:</strong> Sergipe, Brasil
+        </p>
+      </div>
+      
+      <div class="footer__column">
+        <h4 class="footer__title" data-i18n="footer_social">Redes Sociais</h4>
+        <div class="footer__socials">
+          <a href="https://linkedin.com/company/sergamesstudio" class="footer__social" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://instagram.com/sergamesstudio" class="footer__social" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://sergamesstudio.com" class="footer__social" target="_blank" rel="noopener noreferrer">Site</a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer_copyright">
+        © 2026 SerGamesStudio. Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- 
+     SCRIPTS
+      -->
+<script>
+  // ============================================
+  // 1. SISTEMA DE MULTI-IDIOMA
+  // ============================================
+  
+  const translations = {
+    pt: {
+      // Navegação
+      nav_home: "Home",
+      nav_about: "Sobre",
+      nav_services: "Serviços",
+      nav_portfolio: "Portfólio",
+      nav_contact: "Contato",
+      
+      // Hero
+      hero_title: "Transforme Sua Ideia em um Jogo de Sucesso",
+      hero_subtitle: "Desenvolvimento de Jogos com Mitos e Lendas Brasileiras + Equipe Apaixonada + Prototipagem Rápida",
+      cta_start: "COMECE AGORA",
+      cta_start_project: "COMECE SEU PROJETO AGORA",
+      
+      // Slider
+      slider_sery_desc: "Uma jornada épica que mergulha o jogador em universos misteriosos baseados em mitos e lendas.",
+      btn_see_project: "VER PROJETO COMPLETO",
+      
+      // Sobre
+      about_title: "Quem Somos",
+      about_desc_1: "A SerGames é um estúdio de desenvolvimento de jogos eletrônicos com sede em Sergipe, dedicado à criação de experiências de aventura que combinam a nostalgia dos jogos clássicos com as inovações dos títulos modernos.",
+      about_desc_2: "Inspirando-se em mitos e lendas de diversas culturas, o estúdio constrói mundos imersivos que encantam jogadores de todas as gerações.",
+      about_history_title: "História",
+      about_history: "Fundada durante a GameJamPlus 2022, onde conquistou reconhecimento como finalista nacional, a SerGames evoluiu com a chegada de novos integrantes apaixonados por jogos e criatividade.",
+      
+      // Stats
+      stat_finalist: "Finalista GameJamPlus 2022",
+      stat_finalist_desc: "Reconhecimento Nacional",
+      stat_team: "5+ Profissionais",
+      stat_team_desc: "Equipe Apaixonada",
+      stat_experience: "3+ Anos",
+      stat_exp_desc: "Experiência Profissional",
+      stat_platforms: "XR, Mobile, PC",
+      stat_platforms_desc: "Expertise em Múltiplas Plataformas",
+      
+      // Serviços
+      services_title: "O Que Oferecemos",
+      services_subtitle: "Temos 3 serviços principais. Escolha o que faz sentido para você.",
+      service_includes: "O que está incluído:",
+      service1_title: "Desenvolvimento de Jogos Completo",
+      service1_desc: "Transforme sua ideia em um jogo profissional pronto para o mercado.",
+      service1_item1: "✓ Game Design Document (GDD) profissional",
+      service1_item2: "✓ Prototipagem e validação de mecânicas",
+      service1_item3: "✓ Desenvolvimento completo (programação, arte, som)",
+      service1_item4: "✓ Testes e otimização",
+      service1_item5: "✓ Suporte para lançamento na Steam",
+      service2_title: "Prototipagem Rápida",
+      service2_desc: "Valide sua ideia antes de investir uma fortuna.",
+      service2_item1: "✓ Análise da ideia",
+      service2_item2: "✓ Criação de protótipo funcional",
+      service2_item3: "✓ 2-3 rodadas de feedback e iteração",
+      service2_item4: "✓ Documentação técnica",
+      service3_title: "Consultoria em Game Design",
+      service3_desc: "Aprenda como criar jogos que encantam.",
+      service3_item1: "✓ Análise de sua ideia",
+      service3_item2: "✓ Sessões de consultoria (1-1 ou em grupo)",
+      service3_item3: "✓ Feedback em GDD e protótipos",
+      service3_item4: "✓ Orientação sobre lançamento e marketing",
+      btn_quote: "SOLICITAR ORÇAMENTO",
+      
+      // Portfólio
+      portfolio_title: "Projetos em Destaque",
+      portfolio_subtitle: "Veja como transformamos ideias em realidade.",
+      filter_all: "Todos",
+      filter_xr: "XR",
+      filter_mobile: "Mobile 2D",
+      filter_pc: "PC",
+      portfolio_sery_desc: "Uma jornada épica que mergulha o jogador em universos misteriosos baseados em mitos e lendas.",
+      
+      // Contato
+      contact_title: "Fale Conosco",
+      contact_subtitle: "Preencha o formulário abaixo e entraremos em contato em breve.",
+      form_name: "Nome Completo",
+      form_email: "Email",
+      form_phone: "Telefone (WhatsApp)",
+      form_service: "Qual serviço você está interessado?",
+      form_select_service: "Selecione um serviço",
+      form_message: "Mensagem",
+      form_submit: "ENVIAR MENSAGEM",
+      form_success: "✅ Mensagem enviada com sucesso! Entraremos em contato em breve.",
+      
+      // Footer
+      footer_tagline: "Criando experiências que trazem felicidade através de jogos com cultura.",
+      footer_links: "Links Rápidos",
+      footer_contact: "Contato",
+      footer_email: "Email:",
+      footer_whatsapp: "WhatsApp:",
+      footer_address: "Endereço:",
+      footer_social: "Redes Sociais",
+      footer_copyright: "© 2026 SerGamesStudio. Todos os direitos reservados.",
+    },
+    
+    en: {
+      // Navigation
+      nav_home: "Home",
+      nav_about: "About",
+      nav_services: "Services",
+      nav_portfolio: "Portfolio",
+      nav_contact: "Contact",
+      
+      // Hero
+      hero_title: "Transform Your Idea Into a Successful Game",
+      hero_subtitle: "Game Development with Brazilian Myths and Legends + Passionate Team + Rapid Prototyping",
+      cta_start: "START NOW",
+      cta_start_project: "START YOUR PROJECT NOW",
+      
+      // Slider
+      slider_sery_desc: "An epic journey that immerses the player in mysterious universes based on myths and legends.",
+      btn_see_project: "SEE FULL PROJECT",
+      
+      // About
+      about_title: "Who We Are",
+      about_desc_1: "SerGames is an electronic game development studio based in Sergipe, dedicated to creating adventure experiences that combine the nostalgia of classic games with the innovations of modern titles.",
+      about_desc_2: "Inspired by myths and legends from various cultures, the studio builds immersive worlds that enchant players of all ages.",
+      about_history_title: "History",
+      about_history: "Founded during GameJamPlus 2022, where it achieved recognition as a national finalist, SerGames evolved with the arrival of new members passionate about games and creativity.",
+      
+      // Stats
+      stat_finalist: "GameJamPlus 2022 Finalist",
+      stat_finalist_desc: "National Recognition",
+      stat_team: "5+ Professionals",
+      stat_team_desc: "Passionate Team",
+      stat_experience: "3+ Years",
+      stat_exp_desc: "Professional Experience",
+      stat_platforms: "XR, Mobile, PC",
+      stat_platforms_desc: "Multi-Platform Expertise",
+      
+      // Services
+      services_title: "What We Offer",
+      services_subtitle: "We have 3 main services. Choose what makes sense for you.",
+      service_includes: "What's included:",
+      service1_title: "Complete Game Development",
+      service1_desc: "Transform your idea into a professional game ready for the market.",
+      service1_item1: "✓ Professional Game Design Document (GDD)",
+      service1_item2: "✓ Prototyping and mechanics validation",
+      service1_item3: "✓ Complete development (programming, art, sound)",
+      service1_item4: "✓ Testing and optimization",
+      service1_item5: "✓ Support for Steam launch",
+      service2_title: "Rapid Prototyping",
+      service2_desc: "Validate your idea before investing a fortune.",
+      service2_item1: "✓ Idea analysis",
+      service2_item2: "✓ Functional prototype creation",
+      service2_item3: "✓ 2-3 rounds of feedback and iteration",
+      service2_item4: "✓ Technical documentation",
+      service3_title: "Game Design Consulting",
+      service3_desc: "Learn how to create games that enchant.",
+      service3_item1: "✓ Analysis of your idea",
+      service3_item2: "✓ Consulting sessions (1-1 or group)",
+      service3_item3: "✓ Feedback on GDD and prototypes",
+      service3_item4: "✓ Guidance on launch and marketing",
+      btn_quote: "REQUEST QUOTE",
+      
+      // Portfolio
+      portfolio_title: "Featured Projects",
+      portfolio_subtitle: "See how we transform ideas into reality.",
+      filter_all: "All",
+      filter_xr: "XR",
+      filter_mobile: "Mobile 2D",
+      filter_pc: "PC",
+      portfolio_sery_desc: "An epic journey that immerses the player in mysterious universes based on myths and legends.",
+      
+      // Contact
+      contact_title: "Get In Touch",
+      contact_subtitle: "Fill out the form below and we'll get back to you soon.",
+      form_name: "Full Name",
+      form_email: "Email",
+      form_phone: "Phone (WhatsApp)",
+      form_service: "Which service are you interested in?",
+      form_select_service: "Select a service",
+      form_message: "Message",
+      form_submit: "SEND MESSAGE",
+      form_success: "✅ Message sent successfully! We'll get back to you soon.",
+      
+      // Footer
+      footer_tagline: "Creating experiences that bring happiness through games with culture.",
+      footer_links: "Quick Links",
+      footer_contact: "Contact",
+      footer_email: "Email:",
+      footer_whatsapp: "WhatsApp:",
+      footer_address: "Address:",
+      footer_social: "Social Media",
+      footer_copyright: "© 2026 SerGamesStudio. All rights reserved.",
+    },
+    
+    es: {
+      // Navegación
+      nav_home: "Inicio",
+      nav_about: "Acerca de",
+      nav_services: "Servicios",
+      nav_portfolio: "Portafolio",
+      nav_contact: "Contacto",
+      
+      // Hero
+      hero_title: "Transforma Tu Idea en un Juego Exitoso",
+      hero_subtitle: "Desarrollo de Juegos con Mitos y Leyendas Brasileñas + Equipo Apasionado + Prototipado Rápido",
+      cta_start: "COMIENZA AHORA",
+      cta_start_project: "COMIENZA TU PROYECTO AHORA",
+      
+      // Slider
+      slider_sery_desc: "Un viaje épico que sumerge al jugador en universos misteriosos basados en mitos y leyendas.",
+      btn_see_project: "VER PROYECTO COMPLETO",
+      
+      // About
+      about_title: "Quiénes Somos",
+      about_desc_1: "SerGames es un estudio de desarrollo de videojuegos con sede en Sergipe, dedicado a crear experiencias de aventura que combinan la nostalgia de los juegos clásicos con las innovaciones de los títulos modernos.",
+      about_desc_2: "Inspirándose en mitos y leyendas de diversas culturas, el estudio construye mundos inmersivos que encantan a jugadores de todas las edades.",
+      about_history_title: "Historia",
+      about_history: "Fundada durante GameJamPlus 2022, donde logró reconocimiento como finalista nacional, SerGames evolucionó con la llegada de nuevos miembros apasionados por los juegos y la creatividad.",
+      
+      // Stats
+      stat_finalist: "Finalista GameJamPlus 2022",
+      stat_finalist_desc: "Reconocimiento Nacional",
+      stat_team: "5+ Profesionales",
+      stat_team_desc: "Equipo Apasionado",
+      stat_experience: "3+ Años",
+      stat_exp_desc: "Experiencia Profesional",
+      stat_platforms: "XR, Mobile, PC",
+      stat_platforms_desc: "Experiencia Multi-Plataforma",
+      
+      // Services
+      services_title: "Lo Que Ofrecemos",
+      services_subtitle: "Tenemos 3 servicios principales. Elige lo que tenga sentido para ti.",
+      service_includes: "Qué está incluido:",
+      service1_title: "Desarrollo Completo de Juegos",
+      service1_desc: "Transforma tu idea en un juego profesional listo para el mercado.",
+      service1_item1: "✓ Documento de Diseño de Juego (GDD) profesional",
+      service1_item2: "✓ Prototipado y validación de mecánicas",
+      service1_item3: "✓ Desarrollo completo (programación, arte, sonido)",
+      service1_item4: "✓ Pruebas y optimización",
+      service1_item5: "✓ Soporte para lanzamiento en Steam",
+      service2_title: "Prototipado Rápido",
+      service2_desc: "Valida tu idea antes de invertir una fortuna.",
+      service2_item1: "✓ Análisis de la idea",
+      service2_item2: "✓ Creación de prototipo funcional",
+      service2_item3: "✓ 2-3 rondas de retroalimentación e iteración",
+      service2_item4: "✓ Documentación técnica",
+      service3_title: "Consultoría en Diseño de Juegos",
+      service3_desc: "Aprende cómo crear juegos que encanten.",
+      service3_item1: "✓ Análisis de tu idea",
+      service3_item2: "✓ Sesiones de consultoría (1-1 o grupo)",
+      service3_item3: "✓ Retroalimentación en GDD y prototipos",
+      service3_item4: "✓ Orientación sobre lanzamiento y marketing",
+      btn_quote: "SOLICITAR COTIZACIÓN",
+      
+      // Portfolio
+      portfolio_title: "Proyectos Destacados",
+      portfolio_subtitle: "Ve cómo transformamos ideas en realidad.",
+      filter_all: "Todos",
+      filter_xr: "XR",
+      filter_mobile: "Mobile 2D",
+      filter_pc: "PC",
+      portfolio_sery_desc: "Un viaje épico que sumerge al jugador en universos misteriosos basados en mitos y leyendas.",
+      
+      // Contact
+      contact_title: "Ponte en Contacto",
+      contact_subtitle: "Completa el formulario a continuación y nos pondremos en contacto pronto.",
+      form_name: "Nombre Completo",
+      form_email: "Correo Electrónico",
+      form_phone: "Teléfono (WhatsApp)",
+      form_service: "¿Qué servicio te interesa?",
+      form_select_service: "Selecciona un servicio",
+      form_message: "Mensaje",
+      form_submit: "ENVIAR MENSAJE",
+      form_success: "✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      
+      // Footer
+      footer_tagline: "Creando experiencias que traen felicidad a través de juegos con cultura.",
+      footer_links: "Enlaces Rápidos",
+      footer_contact: "Contacto",
+      footer_email: "Correo:",
+      footer_whatsapp: "WhatsApp:",
+      footer_address: "Dirección:",
+      footer_social: "Redes Sociales",
+      footer_copyright: "© 2026 SerGamesStudio. Todos los derechos reservados.",
+    }
+  };
+  
+  // Função para atualizar idioma
+  function setLanguage(lang) {
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+    
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+  }
+  
+  // Inicializar idioma
+  const savedLanguage = localStorage.getItem('language') || 'pt';
+  setLanguage(savedLanguage);
+  document.getElementById('languageSelect').value = savedLanguage;
+  
+  // Event listener para seletor de idioma
+  document.getElementById('languageSelect').addEventListener('change', (e) => {
+    setLanguage(e.target.value);
+  });
+  
+  // ============================================
+  // 2. TEMA LIGHT/DARK
+  // ============================================
+  
+  const themeBtn = document.getElementById('themeBtn');
+  const htmlElement = document.documentElement;
+  
+  // Verificar tema salvo ou preferência do sistema
+  const savedTheme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  
+  function setTheme(theme) {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+  
+  setTheme(savedTheme);
+  
+  themeBtn.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  });
+  
+  // ============================================
+  // 3. SLIDER DE PROJETOS
+  // ============================================
+  
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slider__slide');
+  const totalSlides = slides.length;
+  
+  function showSlide(n) {
+    const slider = document.getElementById('heroSlider');
+    slider.style.transform = `translateX(-${n * 100}%)`;
+    
+    document.querySelectorAll('.slider__dot').forEach((dot, index) => {
+      dot.classList.toggle('slider__dot--active', index === n);
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+  
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+  }
+  
+  function goToSlide(n) {
+    currentSlide = n;
+    showSlide(currentSlide);
+  }
+  
+  setInterval(nextSlide, 5000);
+  
+  // ============================================
+  // 4. FILTROS DE PORTFÓLIO
+  // ============================================
+  
+  document.querySelectorAll('.filter-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('filter-button--active');
+      });
+      this.classList.add('filter-button--active');
+      
+      document.querySelectorAll('.portfolio__card').forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+  
+  // ============================================
+  // 5. FORMULÁRIO DE CONTATO
+  // ============================================
+  
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Coletar dados do formulário
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      service: document.getElementById('service').value,
+      message: document.getElementById('message').value
+    };
+    
+    // Simular envio (em produção, enviar para servidor)
+    console.log('Formulário enviado:', formData);
+    
+    // Mostrar mensagem de sucesso
+    formSuccess.style.display = 'block';
+    contactForm.style.display = 'none';
+    
+    // Resetar formulário
+    contactForm.reset();
+    
+    // Voltar ao formulário após 3 segundos
+    setTimeout(() => {
+      formSuccess.style.display = 'none';
+      contactForm.style.display = 'block';
+    }, 3000);
+  });
+  
+  // ============================================
+  // 6. SMOOTH SCROLL
+  // ============================================
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>
