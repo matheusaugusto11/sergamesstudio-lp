@@ -775,7 +775,7 @@ section {
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -783,10 +783,15 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio__card:hover {
@@ -795,15 +800,19 @@ section {
 }
 
 .portfolio__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 1;
 }
 
 .portfolio__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;  /* ⭐ GARANTE QUE A IMAGEM PREENCHA O ESPAÇO */
   transition: transform var(--transition-normal);
 }
 
