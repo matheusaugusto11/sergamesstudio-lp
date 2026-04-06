@@ -773,12 +773,16 @@ section {
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
 }
 
+/* 🔴 GRID CORRIGIDO - CARDS MENORES */
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* 🔴 CARD COM TAMANHO FIXO QUADRADO */
 .portfolio__card {
   position: relative;
   overflow: hidden;
@@ -792,6 +796,8 @@ section {
   justify-content: center;
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  height: auto;
 }
 
 .portfolio__card:hover {
@@ -799,6 +805,7 @@ section {
   box-shadow: var(--shadow-lg);
 }
 
+/* IMAGEM COM TAMANHO FIXO */
 .portfolio__image {
   position: absolute;
   top: 0;
@@ -812,7 +819,7 @@ section {
 .portfolio__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* ⭐ GARANTE QUE A IMAGEM PREENCHA O ESPAÇO */
+  object-fit: cover;
   transition: transform var(--transition-normal);
 }
 
@@ -820,6 +827,7 @@ section {
   transform: scale(1.05);
 }
 
+/* OVERLAY */
 .portfolio__overlay {
   position: absolute;
   top: 0;
@@ -835,6 +843,7 @@ section {
   padding: var(--spacing-lg);
   opacity: 0;
   transition: opacity var(--transition-normal);
+  z-index: 2;
 }
 
 .portfolio__card:hover .portfolio__overlay {
@@ -864,6 +873,28 @@ section {
 .portfolio__platforms .badge {
   background-color: white;
   color: var(--color-primary);
+}
+
+/* RESPONSIVIDADE PORTFÓLIO */
+@media (max-width: 1024px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
 }
 
 /* 
