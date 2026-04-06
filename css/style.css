@@ -783,7 +783,7 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: .5 / .5;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
