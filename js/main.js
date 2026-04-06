@@ -354,12 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-
-        const headerHeight = 120; // Ajuste conforme a altura real do seu header
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        // target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
