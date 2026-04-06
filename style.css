@@ -405,7 +405,7 @@ section {
 
 .slider__image {
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   border-radius: var(--radius-lg);
 }
