@@ -8,6 +8,8 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -95,14 +97,21 @@
     <section id="sobre" class="about">
       <div class="container">
         <h2 class="section__title" data-i18n="about_title">Quem Somos</h2>
-        
+
         <div class="about__content">
           <div class="about__text">
-            <p class="about__description" data-i18n="about_desc_1"></p>
-            <p class="about__description" data-i18n="about_desc_2"></p>
+            <p class="about__description" data-i18n="about_desc_1">
+              A SerGames é um estúdio de desenvolvimento de jogos eletrônicos com sede em Sergipe, dedicado à criação de experiências de aventura que combinam a nostalgia dos jogos clássicos com as inovações dos títulos modernos.
+            </p>
+
+            <p class="about__description" data-i18n="about_desc_2">
+              Inspirando-se em mitos e lendas de diversas culturas, o estúdio constrói mundos imersivos que encantam jogadores de todas as gerações.
+            </p>
 
             <h3 class="about__subtitle" data-i18n="about_history_title">História</h3>
-            <p class="about__description" data-i18n="about_history"></p>
+            <p class="about__description" data-i18n="about_history">
+              Fundada durante a GameJamPlus 2022, onde conquistou reconhecimento como finalista nacional, a SerGames evoluiu com a chegada de novos integrantes apaixonados por jogos e criatividade.
+            </p>
 
             <div class="about__stats">
               <div class="stat-card">
@@ -145,7 +154,226 @@
         </div>
       </div>
     </section>
+
+    <section id="servicos" class="services">
+      <div class="container">
+        <h2 class="section__title" data-i18n="services_title">O Que Oferecemos</h2>
+
+        <p class="section__subtitle" data-i18n="services_subtitle">
+          Temos 3 serviços principais. Escolha o que faz sentido para você.
+        </p>
+
+        <div class="services__grid">
+          <div class="service-card">
+            <div class="service-card__icon">💎</div>
+            <h3 class="service-card__title" data-i18n="service1_title">Desenvolvimento de Jogos Completo</h3>
+            <p class="service-card__description" data-i18n="service1_desc">
+              Transforme sua ideia em um jogo profissional pronto para o mercado.
+            </p>
+            <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+            <ul class="service-card__list">
+              <li data-i18n="service1_item1">Game Design Document (GDD) profissional</li>
+              <li data-i18n="service1_item2">Prototipagem e validação de mecânicas</li>
+              <li data-i18n="service1_item3">Desenvolvimento completo (programação, arte, som)</li>
+              <li data-i18n="service1_item4">Testes e otimização</li>
+              <li data-i18n="service1_item5">Suporte para lançamento na Steam</li>
+            </ul>
+            <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">⚡</div>
+            <h3 class="service-card__title" data-i18n="service2_title">Prototipagem Rápida</h3>
+            <p class="service-card__description" data-i18n="service2_desc">
+              Valide sua ideia antes de investir uma fortuna.
+            </p>
+            <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+            <ul class="service-card__list">
+              <li data-i18n="service2_item1">Análise da ideia</li>
+              <li data-i18n="service2_item2">Criação de protótipo funcional</li>
+              <li data-i18n="service2_item3">2-3 rodadas de feedback e iteração</li>
+              <li data-i18n="service2_item4">Documentação técnica</li>
+            </ul>
+            <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">🎓</div>
+            <h3 class="service-card__title" data-i18n="service3_title">Consultoria em Game Design</h3>
+            <p class="service-card__description" data-i18n="service3_desc">
+              Aprenda como criar jogos que encantam.
+            </p>
+            <h4 class="service-card__subtitle-small" data-i18n="service_includes">O que está incluído:</h4>
+            <ul class="service-card__list">
+              <li data-i18n="service3_item1">Análise de sua ideia</li>
+              <li data-i18n="service3_item2">Sessões de consultoria (1-1 ou em grupo)</li>
+              <li data-i18n="service3_item3">Feedback em GDD e protótipos</li>
+              <li data-i18n="service3_item4">Orientação sobre lançamento e marketing</li>
+            </ul>
+            <button class="button button--secondary button--full" data-i18n="btn_quote">SOLICITAR ORÇAMENTO</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2 class="section__title" data-i18n="portfolio_title">Projetos em Destaque</h2>
+
+        <p class="section__subtitle" data-i18n="portfolio_subtitle">
+          Veja como transformamos ideias em realidade.
+        </p>
+
+        <div class="portfolio__filters">
+          <button class="filter-button filter-button--active" data-filter="all" data-i18n="filter_all">Todos</button>
+          <button class="filter-button" data-filter="pc" data-i18n="filter_pc">PC</button>
+        </div>
+
+        <div class="portfolio__grid">
+          <div class="portfolio__card" data-category="pc">
+            <div class="portfolio__image">
+              <img src="assets/images/capsula-vertical.png" alt="Sery: Into the World of Myths" class="portfolio__img">
+            </div>
+            <div class="portfolio__overlay">
+              <h3 class="portfolio__card-title">Sery: Into the World of Myths</h3>
+              <p class="portfolio__card-description" data-i18n="portfolio_sery_desc">
+                Uma jornada épica que mergulha o jogador em universos misteriosos baseados em mitos e lendas.
+              </p>
+              <div class="portfolio__platforms">
+                <span class="badge">PC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card" data-category="pc">
+            <div class="portfolio__image">
+              <img src="assets/images/placeholder-sery.png" alt="Projeto em breve" class="portfolio__img">
+            </div>
+            <div class="portfolio__overlay">
+              <h3 class="portfolio__card-title">Em Breve</h3>
+              <p class="portfolio__card-description"></p>
+              <div class="portfolio__platforms">
+                <span class="badge">PC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card" data-category="pc">
+            <div class="portfolio__image">
+              <img src="assets/images/placeholder-sery.png" alt="Projeto em breve" class="portfolio__img">
+            </div>
+            <div class="portfolio__overlay">
+              <h3 class="portfolio__card-title">Em Breve</h3>
+              <p class="portfolio__card-description"></p>
+              <div class="portfolio__platforms">
+                <span class="badge">PC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <div class="container">
+        <h2 class="section__title" data-i18n="contact_title">Fale Conosco</h2>
+
+        <p class="section__subtitle" data-i18n="contact_subtitle">
+          Preencha o formulário abaixo e entraremos em contato em breve.
+        </p>
+
+        <div class="contact__form-wrapper">
+          <form class="contact__form" id="contactForm">
+            <div class="form__group">
+              <label for="name" class="form__label" data-i18n="form_name">Nome Completo</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Seu nome" required>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label" data-i18n="form_email">Email</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="form__group">
+              <label for="phone" class="form__label" data-i18n="form_phone">Telefone (WhatsApp)</label>
+              <input type="tel" id="phone" name="phone" class="form__input" placeholder="(11) 99999-9999" required>
+            </div>
+
+            <div class="form__group">
+              <label for="service" class="form__label" data-i18n="form_service">Qual serviço você está interessado?</label>
+              <select id="service" name="service" class="form__input" required>
+                <option value="" data-i18n="form_select_service">Selecione um serviço</option>
+                <option value="development" data-i18n="service1_title">Desenvolvimento de Jogos Completo</option>
+                <option value="prototype" data-i18n="service2_title">Prototipagem Rápida</option>
+                <option value="consulting" data-i18n="service3_title">Consultoria em Game Design</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label" data-i18n="form_message">Mensagem</label>
+              <textarea id="message" name="message" class="form__textarea" placeholder="Conte-nos sobre sua ideia de jogo..." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="button button--primary button--full" data-i18n="form_submit">
+              ENVIAR MENSAGEM
+            </button>
+
+            <div class="form__success" id="formSuccess" style="display: none;">
+              <p data-i18n="form_success">✅ Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__column">
+          <div class="footer__logo">
+            <img src="assets/images/logo-footer.png" alt="Logo da SergamesStudio no rodapé" class="footer__logo-img">
+          </div>
+          <p class="footer__description" data-i18n="footer_tagline">
+            Criando experiências que trazem felicidade através de jogos com cultura.
+          </p>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title" data-i18n="footer_links">Links Rápidos</h4>
+          <ul class="footer__links">
+            <li><a href="#home" class="footer__link" data-i18n="nav_home">Home</a></li>
+            <li><a href="#sobre" class="footer__link" data-i18n="nav_about">Sobre</a></li>
+            <li><a href="#servicos" class="footer__link" data-i18n="nav_services">Serviços</a></li>
+            <li><a href="#portfolio" class="footer__link" data-i18n="nav_portfolio">Portfólio</a></li>
+            <li><a href="#contato" class="footer__link" data-i18n="nav_contact">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title" data-i18n="footer_contact">Contato</h4>
+          <p class="footer__contact">
+            <strong data-i18n="footer_email">Email:</strong> contato@sergamesstudio.com<br>
+            <strong data-i18n="footer_address">Endereço:</strong> Aracaju-SE, Brasil
+          </p>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title" data-i18n="footer_social">Redes Sociais</h4>
+          <div class="footer__socials">
+            <a href="https://linkedin.com/company/sergamesstudio" class="footer__social" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://instagram.com/sergamesstudio" class="footer__social" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer_copyright">
+          © 2026 SerGamesStudio. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js" defer></script>
 </body>
