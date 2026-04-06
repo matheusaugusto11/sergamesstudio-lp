@@ -775,7 +775,7 @@ section {
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -783,7 +783,7 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  aspect-ratio: .5 / .5;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
