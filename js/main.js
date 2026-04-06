@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ============================================
-  // 1. TRADUÇÕES
-  // ============================================
   const translations = {
     pt: {
       nav_home: "Home",
@@ -74,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_social: "Redes Sociais",
       footer_copyright: "© 2026 SerGamesStudio. Todos os direitos reservados."
     },
+
     en: {
       nav_home: "Home",
       nav_about: "About",
@@ -145,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_social: "Social Media",
       footer_copyright: "© 2026 SerGamesStudio. All rights reserved."
     },
+
     es: {
       nav_home: "Inicio",
       nav_about: "Acerca de",
@@ -222,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
 
-    document.querySelectorAll('[data-i18n]').forEach((element) => {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
         element.textContent = translations[lang][key];
@@ -236,25 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const languageSelect = document.getElementById('languageSelect');
   if (languageSelect) {
     languageSelect.value = savedLanguage;
-    languageSelect.addEventListener('change', (e) => {
-      setLanguage(e.target.value);
-    });
+    languageSelect.addEventListener('change', (e) => setLanguage(e.target.value));
   }
 
-  // ============================================
-  // 2. TEMA LIGHT/DARK
-  // ============================================
   const themeBtn = document.getElementById('themeBtn');
   const htmlElement = document.documentElement;
-
-  const savedTheme =
-    localStorage.getItem('theme') ||
+  const savedTheme = localStorage.getItem('theme') ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
   function setTheme(theme) {
     htmlElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-
     if (themeBtn) {
       themeBtn.innerHTML = theme === 'dark' ? '<span class="theme-icon">☀️</span>' : '<span class="theme-icon">🌙</span>';
     }
@@ -270,18 +261,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ============================================
-  // 3. SLIDER DE PROJETOS
-  // ============================================
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slider__slide');
   const totalSlides = slides.length;
-  const heroSlider = document.getElementById('heroSlider');
 
   function showSlide(n) {
-    if (!heroSlider || totalSlides === 0) return;
+    const slider = document.getElementById('heroSlider');
+    if (!slider || totalSlides === 0) return;
 
-    heroSlider.style.transform = `translateX(-${n * 100}%)`;
+    slider.style.transform = `translateX(-${n * 100}%)`;
 
     document.querySelectorAll('.slider__dot').forEach((dot, index) => {
       dot.classList.toggle('slider__dot--active', index === n);
@@ -303,23 +291,24 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
   }
 
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+  window.goToSlide = goToSlide;
+
   if (totalSlides > 1) {
     setInterval(nextSlide, 5000);
   }
 
-  // ============================================
-  // 4. FILTROS DE PORTFÓLIO
-  // ============================================
-  document.querySelectorAll('.filter-button').forEach((button) => {
+  document.querySelectorAll('.filter-button').forEach(button => {
     button.addEventListener('click', function () {
       const filter = this.getAttribute('data-filter');
 
-      document.querySelectorAll('.filter-button').forEach((btn) => {
+      document.querySelectorAll('.filter-button').forEach(btn => {
         btn.classList.remove('filter-button--active');
       });
       this.classList.add('filter-button--active');
 
-      document.querySelectorAll('.portfolio__card').forEach((card) => {
+      document.querySelectorAll('.portfolio__card').forEach(card => {
         if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
           card.style.display = 'block';
         } else {
@@ -329,9 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ============================================
-  // 5. FORMULÁRIO DE CONTATO
-  // ============================================
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
@@ -360,16 +346,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ============================================
-  // 6. SMOOTH SCROLL
-  // ============================================
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
       if (target) {
+        e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
+
+  showSlide(currentSlide);
 });

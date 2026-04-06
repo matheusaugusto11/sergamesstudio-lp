@@ -104,16 +104,22 @@
     font-size: 28px;
   }
 
-  .slider__nav {
-    padding: 6px 10px;
-    font-size: 16px;
+  .slider__image {
+    height: 220px;
   }
 
-  .slider__nav--prev {
-    left: var(--spacing-sm);
+  .button--large {
+    width: 100%;
   }
 
-  .slider__nav--next {
-    right: var(--spacing-sm);
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .language-select {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }
