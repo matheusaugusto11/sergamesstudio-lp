@@ -122,4 +122,13 @@
     padding: 8px 12px;
     font-size: 13px;
   }
+
+#home,
+#sobre,
+#servicos,
+#portfolio,
+#contato {
+  scroll-margin-top: 120px;
+}
+
 }
